@@ -1,5 +1,7 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { Map } from "@maplibre/maplibre-react-native";
+
+import nzTopoStyle from "./assets/nz-topo-style-spec.json";
 
 export default function MapViewComponent() {
     return (
@@ -9,10 +11,10 @@ export default function MapViewComponent() {
                 height: "100%"
             }}>
 
-
-            <Map mapStyle={
-                "./assets/nz-topo-style-spec.json"
-            } />
+            <Map
+                style={{ flex: 1 }}
+                mapStyle={JSON.stringify(nzTopoStyle)}
+            />
         </View>
     )
 }
