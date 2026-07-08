@@ -19,27 +19,19 @@ export default function MapViewComponent() {
       }}
     >
       <Map
-            mapStyle={topoStyle as StyleSpecification}
-            logo={false}
-            attribution={false}
-            compassHiddenFacingNorth={false}
-            scaleBar={true}
-            preferredFramesPerSecond={mapStyle.preferredFramesPerSecond}
-            >
+        mapStyle={topoStyle as StyleSpecification}
+        logo={false}
+        attribution={false}
+        compassHiddenFacingNorth={false}
+        scaleBar={true}
+        preferredFramesPerSecond={mapStyle.preferredFramesPerSecond}
+      >
         <Camera
-<<<<<<< HEAD
-          initialViewState={{
-            center: [172.6207487, -43.52872608],
-            zoom: 8,
-          }}
+          initialViewState={cameraStyle.initialViewState}
+          minZoom={cameraStyle.minZoom}
+          maxZoom={cameraStyle.maxZoom}
+          maxBounds={cameraStyle.cameraBounds}
         />
-=======
-            initialViewState={cameraStyle.initialViewState}
-            minZoom={cameraStyle.minZoom}
-            maxZoom={cameraStyle.maxZoom}
-            maxBounds={cameraStyle.cameraBounds}
-         />
->>>>>>> 86c4e388b4cd064c7e4f42463c5e44dd4d67e0c1
       </Map>
     </View>
   );
