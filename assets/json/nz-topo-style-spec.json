@@ -14,9 +14,21 @@
         "https://tiles-cdn.koordinates.com/services;key=4965ffcfc254417dbd88c28a1ab51d40/tiles/v4/layer=50798/EPSG:3857/{z}/{x}/{y}.png"
       ],
       "tileSize": 256
+    },
+    "background-layer": {
+      "id": "background-layer",
+      "type": "background",
+      "paint": {
+        "background-color": "#a11010"
+      }
     }
   },
   "layers": [
+    {
+      "id": "background-layer",
+      "type": "background",
+      "paint": {"background-color": "#d0e6f4"}
+    },
     {
       "id": "nz-topo-50",
       "type": "raster",
