@@ -27,5 +27,9 @@ You can start developing by editing the files inside the **app** directory. This
 
 ## Todo/ideas
 - [ ] Use [layer](https://maplibre.org/maplibre-react-native/docs/components/layer) to add tracks from OSM overlaid on to the map.
+- [ ] add in downloaded regions
 - [ ] Use layer to add 3D terrain raster
 - [ ] Add zoom detail levels
+- [ ] move origin on map open
+- [ ] add min and max view zoom levels (This isn't done in the API, it is done to the Layer object)
+- [ ] use [location manager](https://maplibre.org/maplibre-react-native/docs/modules/location-manager) to get position, add a layer for waypoints and the person icon.
