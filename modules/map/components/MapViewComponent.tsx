@@ -14,6 +14,7 @@ export default function MapViewComponent() {
     </View>
   );
 }
+
 /*
 follow the LDS tutorial for getting XYZ API link
 Work out how to set maplibre to use imageSource
