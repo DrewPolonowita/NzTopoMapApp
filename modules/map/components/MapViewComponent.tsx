@@ -33,5 +33,3 @@ work out how to serve locally stored images to that source.
 Look at the format that downloaded LINZ data comes in (either GeoTIFF or GeoJPEG).
 work ot how to link XYZ api to serve imageSource georeferenced images
 */
-
-//4965ffcfc254417dbd88c28a1ab51d40
