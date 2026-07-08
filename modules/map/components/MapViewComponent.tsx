@@ -3,6 +3,7 @@ import { Map, StyleSpecification, Camera } from "@maplibre/maplibre-react-native
 
 import topoStyle from "../../../assets/json/nz-topo-style-spec.json";
 import cameraStyle from "../../../assets/json/nz-camera-style-spec.json";
+import mapStyle from "../../../assets/json/nz-map-style-spec.json";
 
 
 export default function MapViewComponent() {
@@ -14,12 +15,19 @@ export default function MapViewComponent() {
         height: "100%",
       }}
     >
-      <Map mapStyle={topoStyle as StyleSpecification}>
+      <Map
+            mapStyle={topoStyle as StyleSpecification}
+            logo={false}
+            attribution={false}
+            compassHiddenFacingNorth={false}
+            scaleBar={true}
+            preferredFramesPerSecond={mapStyle.preferredFramesPerSecond}
+            >
         <Camera
-            initialViewState={{
-                    center: [172.6207487, -43.52872608],
-                    zoom: 8
-                }}
+            initialViewState={cameraStyle.initialViewState}
+            minZoom={cameraStyle.minZoom}
+            maxZoom={cameraStyle.maxZoom}
+            maxBounds={cameraStyle.cameraBounds}
          />
       </Map>
     </View>

@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+
 import MapViewComponent from "@/modules/map/components/MapViewComponent";
 
 export default function Index() {
@@ -8,9 +9,10 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        display: "flex"
       }}
     >
-      <MapViewComponent />
+        <MapViewComponent />
     </View>
   );
 }
