@@ -1,22 +1,18 @@
 import { View } from "react-native";
-import { Map } from "@maplibre/maplibre-react-native";
-
-import nzTopoStyle from "./assets/nz-topo-style-spec.json";
+import { Map, StyleSpecification } from "@maplibre/maplibre-react-native";
+import topoStyle from "./assets/nz-topo-style-spec.json";
 
 export default function MapViewComponent() {
-    return (
-        <View
-            style={{
-                width: "100%",
-                height: "100%"
-            }}>
-
-            <Map
-                style={{ flex: 1 }}
-                mapStyle={JSON.stringify(nzTopoStyle)}
-            />
-        </View>
-    )
+  return (
+    <View
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <Map mapStyle={topoStyle as StyleSpecification} />
+    </View>
+  );
 }
 /*
 follow the LDS tutorial for getting XYZ API link
