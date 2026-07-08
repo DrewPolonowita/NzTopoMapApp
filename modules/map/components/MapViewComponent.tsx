@@ -44,15 +44,3 @@ work out how to serve locally stored images to that source.
 Look at the format that downloaded LINZ data comes in (either GeoTIFF or GeoJPEG).
 work ot how to link XYZ api to serve imageSource georeferenced images
 */
-
-/*
-OfflineManager.createPack({
-  mapStyle: topoStyle,
-  minZoom: 0,
-  maxZoom: 15,
-  bounds: [
-    165, -48,
-    180, -33
-  ]
-});
-*/

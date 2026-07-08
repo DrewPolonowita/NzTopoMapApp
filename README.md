@@ -33,3 +33,8 @@ You can start developing by editing the files inside the **app** directory. This
 - [ ] move origin on map open
 - [ ] add min and max view zoom levels (This isn't done in the API, it is done to the Layer object)
 - [ ] use [location manager](https://maplibre.org/maplibre-react-native/docs/modules/location-manager) to get position, add a layer for waypoints and the person icon.
+
+## Adding offline tiles
+- [ ] dynamically switch sources based on a variable
+- [ ] download visible region (use [getViewState()](https://maplibre.org/maplibre-react-native/docs/components/map#getviewstate) method)
+- [ ] download preset regions (we just make a button and store some preset bounds for the download call)
