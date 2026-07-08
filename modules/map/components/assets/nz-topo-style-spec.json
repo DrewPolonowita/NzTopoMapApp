@@ -4,7 +4,7 @@
     "nz-topo": {
       "type": "raster",
       "tiles": [
-        "https://basemaps.linz.govt.nz/v1/tiles/topographic/3857/{z}/{x}/{y}.png?api=4965ffcfc254417dbd88c28a1ab51d40"
+        "https://tiles-cdn.koordinates.com/services;key=10081158c30a4678be20edef679980f1/tiles/v4/layer=52324/EPSG:3857/{z}/{x}/{y}.png"
       ],
       "tileSize": 256
     }
