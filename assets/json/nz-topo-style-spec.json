@@ -1,0 +1,35 @@
+{
+  "version": 8,
+  "sources": {
+    "nz-topo-50": {
+      "type": "raster",
+      "tiles": [
+        "https://tiles-cdn.koordinates.com/services;key=4965ffcfc254417dbd88c28a1ab51d40/tiles/v4/layer=50767/EPSG:3857/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256
+    },
+    "nz-topo-250": {
+      "type": "raster",
+      "tiles": [
+        "https://tiles-cdn.koordinates.com/services;key=4965ffcfc254417dbd88c28a1ab51d40/tiles/v4/layer=50798/EPSG:3857/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256
+    }
+  },
+  "layers": [
+    {
+      "id": "nz-topo-50",
+      "type": "raster",
+      "source": "nz-topo-50",
+      "minzoom": 12,
+      "maxzoom": 24
+    },
+    {
+      "id": "nz-topo-250",
+      "type": "raster",
+      "source": "nz-topo-250",
+      "minzoom": 0,
+      "maxzoom": 12
+    }
+  ]
+}

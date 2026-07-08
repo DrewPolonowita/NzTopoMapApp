@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { Map, StyleSpecification } from "@maplibre/maplibre-react-native";
-import topoStyle from "./assets/nz-topo-style-spec.json";
+import topoStyle from "../../../assets/json/nz-topo-style-spec.json";
 
 export default function MapViewComponent() {
   return (
