@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 0,
   "sources": {
     "nz-topo-50": {
       "type": "raster",
