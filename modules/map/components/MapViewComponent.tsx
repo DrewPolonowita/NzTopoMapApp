@@ -1,9 +1,9 @@
+import { Camera, Map, StyleSpecification } from "@maplibre/maplibre-react-native";
 import { View } from "react-native";
-import { Map, StyleSpecification, Camera } from "@maplibre/maplibre-react-native";
 
-import topoStyle from "../../../assets/json/nz-topo-style-spec.json";
 import cameraStyle from "../../../assets/json/nz-camera-style-spec.json";
 import mapStyle from "../../../assets/json/nz-map-style-spec.json";
+import topoStyle from "../../../assets/json/nz-topo-style-spec.json";
 
 
 export default function MapViewComponent() {
@@ -13,6 +13,7 @@ export default function MapViewComponent() {
       style={{
         width: "100%",
         height: "100%",
+        flex: 1
       }}
     >
       <Map
@@ -28,7 +29,7 @@ export default function MapViewComponent() {
             minZoom={cameraStyle.minZoom}
             maxZoom={cameraStyle.maxZoom}
             maxBounds={cameraStyle.cameraBounds}
-         />
+        />
       </Map>
     </View>
   );
