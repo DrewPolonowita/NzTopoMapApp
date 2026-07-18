@@ -34,13 +34,13 @@
       "type": "raster",
       "source": "nz-topo-50",
       "minzoom": 12,
-      "maxzoom": 24
+      "maxzoom": 14
     },
     {
       "id": "nz-topo-250",
       "type": "raster",
       "source": "nz-topo-250",
-      "minzoom": 0,
+      "minzoom": 5,
       "maxzoom": 12
     }
   ]

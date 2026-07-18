@@ -1,7 +1,7 @@
-import { OfflineManager } from "@maplibre/maplibre-react-native";
+import { OfflineManager, LngLatBounds } from "@maplibre/maplibre-react-native";
 import topoStyle from "../../../assets/json/nz-topo-style-spec.json";
 
-export async function downloadTestRegion() {
+export async function downloadTestRegion(bounds: LngLatBounds) {
   console.log("Clearing offline database...");
 
   await OfflineManager.resetDatabase();
@@ -10,11 +10,11 @@ export async function downloadTestRegion() {
   return OfflineManager.createPack(
     {
       mapStyle: "http://100.99.19.37:8000/json/nz-topo-style-spec.json",
-      minZoom: 10,
-      maxZoom: 12,
-      bounds: [172.59, -43.424, 172.7266, -43.269],
+      minZoom: 12,
+      maxZoom: 14,
+      bounds: bounds,
       metadata: {
-        name: "Test Region",
+        name: "Downloaded Region",
       },
     },
     (_pack, status) => {
