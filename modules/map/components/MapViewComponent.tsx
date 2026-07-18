@@ -1,4 +1,5 @@
 import { View } from "react-native";
+import { RefObject } from "react";
 import {
   Map,
   MapRef,
@@ -9,12 +10,15 @@ import topoStyle from "../../../assets/json/nz-topo-style-spec.json";
 import cameraStyle from "../../../assets/json/nz-camera-style-spec.json";
 import mapStyle from "../../../assets/json/nz-map-style-spec.json";
 
-export default function MapViewComponent() {
+interface Props {
+  mapref: RefObject<MapRef | null>;
+}
+
+export default function MapViewComponent({ mapref }: Props) {
   return (
     <View
       style={{
         width: "100%",
-        // height: "100%",
         flex: 1,
       }}
     >
@@ -25,7 +29,7 @@ export default function MapViewComponent() {
         compassHiddenFacingNorth={false}
         scaleBar={true}
         preferredFramesPerSecond={mapStyle.preferredFramesPerSecond}
-        // ref={mapref}
+        ref={mapref}
       >
         <Camera
           initialViewState={cameraStyle.initialViewState}

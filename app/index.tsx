@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { MapRef } from "@maplibre/maplibre-react-native";
 
 export default function Index() {
-  const mapref = useRef<MapRef>(null);
+  const mapref = useRef<MapRef | null>(null);
   // const [offline, setOffline] = useState<boolean>(false);
   return (
     <View
@@ -17,8 +17,8 @@ export default function Index() {
         display: "flex",
       }}
     >
-      <MapViewComponent />
-      <Buttons />
+      <MapViewComponent mapref={mapref} />
+      <Buttons mapref={mapref} />
     </View>
   );
 }

@@ -1,3 +1,4 @@
+import { useState, RefObject } from "react";
 import { View, Button } from "react-native";
 import { MapRef, NetworkManager } from "@maplibre/maplibre-react-native";
 import {
@@ -6,8 +7,12 @@ import {
   clearcache,
 } from "../services/OfflineMapService";
 
-export default function Buttons() {
-  let offline = false;
+interface Props {
+  mapref: RefObject<MapRef | null>;
+}
+
+export default function Buttons({ mapref }: Props) {
+  const [isOnline, setIsOnline] = useState(true);
   return (
     <View
       style={{
@@ -20,7 +25,17 @@ export default function Buttons() {
         title="Download Test Region (WIP)"
         onPress={async () => {
           console.log("Downloading test region...");
-          // await downloadTestRegion(await mapref.current?.getBounds());
+          if (!mapref) {
+            throw new Error("Map has not been initialized.");
+          }
+
+          const bounds = await mapref.current?.getBounds();
+          if (bounds) {
+            console.log("Downloading", bounds);
+            // await downloadTestRegion(bounds);
+          } else {
+            console.log("mapref does not exist");
+          }
         }}
       />
 
@@ -39,17 +54,16 @@ export default function Buttons() {
       />
 
       <Button
-        title="offline mode"
-        onPress={async () => {
-          if (offline === false) {
-            NetworkManager.setConnected(true);
-            offline = true;
-            console.log("enabled network");
-          } else {
+        title={isOnline ? "Set offline" : "Set online"}
+        onPress={() => {
+          if (isOnline) {
             NetworkManager.setConnected(false);
-            offline = false;
             console.log("disabled network");
+          } else {
+            NetworkManager.setConnected(true);
+            console.log("enabled network");
           }
+          setIsOnline(!isOnline);
         }}
       />
     </View>
