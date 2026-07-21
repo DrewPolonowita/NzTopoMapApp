@@ -1,4 +1,4 @@
-import downloadRegion from "@/modules/map/services/downloadRegion";
+import { checkTestRegion, clearcache, downloadRegion } from "@/modules/map/services/downloadRegion";
 import viewDownloadedRegion from "@/modules/map/services/viewDownloadedRegion";
 import { Dimensions, StatusBar, Text, View } from "react-native";
 import { initialWindowMetrics } from 'react-native-safe-area-context';
@@ -41,6 +41,16 @@ export default function NavigationMenu() {
                     <NavigationButton onPress={viewDownloadedRegion}>
                         <Text>
                             computer, turn off the internet
+                        </Text>
+                    </NavigationButton>
+                    <NavigationButton onPress={checkTestRegion}>
+                        <Text>
+                            print test regions
+                        </Text>
+                    </NavigationButton>
+                    <NavigationButton onPress={clearcache}>
+                        <Text>
+                            clear cache
                         </Text>
                     </NavigationButton>
 

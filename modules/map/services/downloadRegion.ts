@@ -1,6 +1,6 @@
 import { OfflineManager } from "@maplibre/maplibre-react-native";
 
-const downloadRegion = async () => {
+export const downloadRegion = async () => {
     const progressListener = (offlineRegion: any, status: any) =>
         console.log(offlineRegion, status);
     const errorListener = (offlineRegion: any, error: any) =>
@@ -8,15 +8,31 @@ const downloadRegion = async () => {
 
     await OfflineManager.createPack(
     {
-        mapStyle: "https://demotiles.maplibre.org/tiles/tiles.json",
-        minZoom: 14,
-        maxZoom: 20,
+        mapStyle: "asset://nz-topo-style-spec.json",
+        minZoom: 0,
+        maxZoom: 24,
         bounds: [172.59, -43.424, 172.7266, -43.269],
-        metadata: { customValue: "myValue" },
+        metadata: { customValue: "test" },
     },
         progressListener,
         errorListener,
     );
 }
 
-export default downloadRegion;
+
+
+
+
+
+export const checkTestRegion = async () => {
+    const packs = await OfflineManager.getPacks();
+    console.log("Packs:", packs);
+}
+
+export const clearcache = async () => {
+    console.log("Clearing offline database...");
+
+    await OfflineManager.resetDatabase();
+
+    console.log("Cleared offline database")
+}

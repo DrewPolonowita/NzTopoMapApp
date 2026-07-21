@@ -1,5 +1,5 @@
 {
-  "version": 0,
+  "version": 8,
   "sources": {
     "nz-topo-50": {
       "type": "raster",
@@ -27,7 +27,7 @@
     {
       "id": "background-layer",
       "type": "background",
-      "paint": {"background-color": "#d0e6f4"}
+      "paint": { "background-color": "#d0e6f4" }
     },
     {
       "id": "nz-topo-50",
